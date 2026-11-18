@@ -1,0 +1,10 @@
+{
+  "name": "YojanaFinder",
+  "description": "Discover central and state government welfare schemes you qualify for across India, with verified eligibility, document checklists, and official application steps in English, Tamil, and Hindi.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

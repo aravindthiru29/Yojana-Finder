@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: "Inter", "Noto Sans Tamil", "Noto Sans Devanagari", system-ui, -apple-system, sans-serif;
+    --font-display: "Plus Jakarta Sans", "Noto Sans Tamil", "Noto Sans Devanagari", "Inter", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono, .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Subtle tricolor civic hairline */
+.tricolor-bar {
+  background: linear-gradient(90deg, #ea580c 0%, #ea580c 33.33%, #e2e8f0 33.33%, #e2e8f0 66.66%, #15803d 66.66%, #15803d 100%);
+}
+
+.dark .tricolor-bar {
+  background: linear-gradient(90deg, #f97316 0%, #f97316 33.33%, #475569 33.33%, #475569 66.66%, #22c55e 66.66%, #22c55e 100%);
+}
+
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .print-break-inside-avoid {
+    break-inside: avoid;
+  }
+}
